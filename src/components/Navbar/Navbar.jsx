@@ -3,18 +3,17 @@ import { FiMenu, FiX } from 'react-icons/fi'
 import './Navbar.css'
 
 const navLinks = [
-  { label: 'About',        href: '#about' },
-  { label: 'Skills',       href: '#skills' },
-  { label: 'Projects',     href: '#projects' },
-  { label: 'Timeline',     href: '#timeline' },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Timeline', href: '#timeline' },
   { label: 'Achievements', href: '#achievements' },
-  { label: 'Contact',      href: '#contact' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen]         = useState(false)
-  const [active, setActive]     = useState('')
+  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState('')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -27,28 +26,50 @@ export default function Navbar() {
     setOpen(false)
   }
 
+  // Prevent scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
+
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
-        <a href="#hero" className="navbar__logo">
+        <a href="#hero" className="navbar__logo" onClick={() => handleNav('')}>
           <span className="navbar__logo-bracket">&lt;</span>
-          KUN
+          UNK
           <span className="navbar__logo-bracket">/&gt;</span>
         </a>
 
-        <ul className={`navbar__links ${open ? 'navbar__links--open' : ''}`}>
-          {navLinks.map(link => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className={`navbar__link ${active === link.href ? 'navbar__link--active' : ''}`}
-                onClick={() => handleNav(link.href)}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-          <li>
+        <div className={`navbar__menu ${open ? 'navbar__menu--open' : ''}`}>
+          <ul className="navbar__links">
+            {navLinks.map(link => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className={`navbar__link ${active === link.href ? 'navbar__link--active' : ''}`}
+                  onClick={() => handleNav(link.href)}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div className="navbar__actions">
+            <a
+              href="#contact"
+              className={`navbar__link navbar__link--contact ${active === '#contact' ? 'navbar__link--active' : ''}`}
+              onClick={() => handleNav('#contact')}
+            >
+              Contact
+            </a>
             <a
               href="/resume.pdf"
               className="navbar__cta"
@@ -57,8 +78,8 @@ export default function Navbar() {
             >
               Resume
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
 
         <button
           className="navbar__hamburger"

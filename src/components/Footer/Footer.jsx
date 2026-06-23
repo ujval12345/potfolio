@@ -1,4 +1,4 @@
-import { FiGithub, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
 import './Footer.css'
 
 const quickLinks = [
