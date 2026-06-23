@@ -26,7 +26,7 @@
 }
 
 /* Photo */
-.about__photo-col {}
+
 
 .about__photo-frame {
   position: relative;
@@ -92,7 +92,9 @@
   margin-bottom: 16px;
 }
 
-.about__body:last-child { margin-bottom: 0; }
+.about__body:last-child {
+  margin-bottom: 0;
+}
 
 .about__text-block {
   margin-bottom: 32px;

@@ -2,19 +2,19 @@ import { FiGithub, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi'
 import './Footer.css'
 
 const quickLinks = [
-  { label: 'About',        href: '#about' },
-  { label: 'Skills',       href: '#skills' },
-  { label: 'Projects',     href: '#projects' },
-  { label: 'Timeline',     href: '#timeline' },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Timeline', href: '#timeline' },
   { label: 'Achievements', href: '#achievements' },
-  { label: 'Contact',      href: '#contact' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 const socials = [
-  { icon: <FiGithub size={18} />,   href: 'https://github.com/',    label: 'GitHub' },
-  { icon: <FiLinkedin size={18} />, href: 'https://linkedin.com/',  label: 'LinkedIn' },
-  { icon: <FiTwitter size={18} />,  href: 'https://twitter.com/',   label: 'Twitter' },
-  { icon: <FiMail size={18} />,     href: 'mailto:ujval@example.com', label: 'Email' },
+  { icon: <FiGithub size={18} />, href: 'https://github.com/ujval12345', label: 'GitHub' },
+  { icon: <FiLinkedin size={18} />, href: 'https://linkedin.com/', label: 'LinkedIn' },
+
+  { icon: <FiMail size={18} />, href: 'mailto:ujvalkadem@gmail.com', label: 'Email' },
 ]
 
 export default function Footer() {
@@ -61,7 +61,7 @@ export default function Footer() {
         <div className="footer__contact-col">
           <p className="footer__nav-title">Contact</p>
           <div className="footer__contact-items">
-            <a href="mailto:ujval.kadem@example.com" className="footer__contact-item">
+            <a href="mailto:ujvalkadem@gmail.com" className="footer__contact-item">
               <FiMail size={14} /> ujval.kadem@example.com
             </a>
             <span className="footer__contact-item">
