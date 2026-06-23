@@ -1,0 +1,132 @@
+.skills {
+  background: var(--clr-bg);
+}
+
+.skills__animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.skills__animate--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.skills__card {
+  padding: 32px;
+}
+
+.skills__cat-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skills__cat-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--clr-border);
+}
+
+.skills__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Skill bar */
+.skill-bar {}
+
+.skill-bar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skill-bar__name {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--clr-offwhite);
+}
+
+.skill-bar__pct {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--clr-muted);
+}
+
+.skill-bar__track {
+  height: 3px;
+  background: var(--clr-surface-2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--clr-muted), var(--clr-white));
+  border-radius: 3px;
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Cloud */
+.skills__cloud {
+  padding: 40px;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+}
+
+.skills__cloud-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+  margin-bottom: 20px;
+}
+
+.skills__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills__pill {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--clr-silver);
+  border: 1px solid var(--clr-border);
+  border-radius: 40px;
+  padding: 6px 16px;
+  transition: all var(--transition-fast);
+  cursor: default;
+}
+
+.skills__pill:hover {
+  border-color: var(--clr-border-2);
+  color: var(--clr-white);
+  background: var(--clr-surface-2);
+}
+
+@media (max-width: 768px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
